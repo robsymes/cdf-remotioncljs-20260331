@@ -1,13 +1,19 @@
 {:source-paths ["src"]
  :dependencies [[reagent "1.2.0"]]
+
  :builds
  {:remotion
   {:target :esm
    :output-dir "public/js"
-   :modules {:main {:exports {:init my-video.core/init
-                              :get_root my-video.core/get_root}}}
-   :js-options {:resolve {"react" {:target :npm :name "react"}
-                          "react-dom" {:target :npm :name "react-dom"}}}}}}
+   :modules
+   {:main
+    {:exports
+     {:init my-video.core/init
+      :get_root my-video.core/get-root}}}
+   
+   :js-options
+   {:js-provider :import}}}} ;; This is the magic line for ESM + Vite
+
 
 
 

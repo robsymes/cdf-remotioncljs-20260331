@@ -1,6 +1,11 @@
 (ns my-video.core
   (:require ["remotion" :refer [registerRoot Composition]]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+
+            ["react" :as react]
+            ["react-dom" :as dom]
+
+            ))
 
 (defn my-video-content []
   ;; Hooks go here!
