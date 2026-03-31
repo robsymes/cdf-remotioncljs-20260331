@@ -10,7 +10,7 @@
     "@remotion/tailwind-v4": "4.0.441",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "reagent": "^1.0.1",
+    "reagent": "^1.2.0",
     "remotion": "4.0.441",
     "tailwindcss": "4.0.0"
   },
