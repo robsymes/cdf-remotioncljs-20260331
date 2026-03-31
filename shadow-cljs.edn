@@ -1,6 +1,5 @@
 {:source-paths ["src"]
- ;; :dependencies [[reagent "1.2.0"]]
- :dependencies [[reagent "1.0.1"]]
+ :dependencies [[reagent "1.2.0"]]
  :builds
  {:remotion
   {:target :browser
