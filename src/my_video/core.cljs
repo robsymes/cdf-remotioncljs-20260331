@@ -8,8 +8,8 @@
             ))
 
 (defn my-video-content []
-  ;; Hooks go here!
-  [:div "Hello from CLJS"])
+  [:div {:style {:color "white" :font-size "100px"}}
+   "IF YOU CAN SEE THIS, IT WORKS!"])
 
 (defn ^:export get_root []
   ;; Return a PLAIN function that returns a Reagent element
