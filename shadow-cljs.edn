@@ -6,9 +6,8 @@
    :output-dir "public/js"
    :modules {:main {:exports {:init my-video.core/init
                               :get_root my-video.core/get_root}}}
-   ;; Simplified resolve map
-   :js-options {:resolve {"react" :npm
-                          "react-dom" :npm}}}}}
+   :js-options {:resolve {"react" {:target :npm :name "react"}
+                          "react-dom" {:target :npm :name "react-dom"}}}}}}
 
 
 
