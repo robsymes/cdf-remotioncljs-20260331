@@ -31,11 +31,26 @@ Config.overrideWebpackConfig(enableTailwind);
 // Old: Config.Puppeteer.addPuppeteerArgument()
 // New: Config.addPuppeteerArgument()
 
-Config.addPuppeteerArgument('--no-sandbox');
-Config.addPuppeteerArgument('--disable-setuid-sandbox');
-Config.setChromiumDisableWebSecurity(true);
+// Config.addPuppeteerArgument('--no-sandbox');
+// Config.addPuppeteerArgument('--disable-setuid-sandbox');
+// Config.setChromiumDisableWebSecurity(true);
 
 // If you need headless mode specifically:
-Config.setHeadless(true); 
+// Config.setHeadless(true); 
 
+
+
+// import { Config } from '@remotion/cli/config';
+
+// Use setChromiumOptions to pass any Chromium/Puppeteer flags
+Config.setChromiumOptions({
+    args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-web-security',
+    ],
+});
+
+// For headless mode (default is true in newer versions, but good to be explicit)
+Config.setHeadless(true);
 
