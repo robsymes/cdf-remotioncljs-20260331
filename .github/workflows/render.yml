@@ -54,7 +54,10 @@ jobs:
             --browser-arg="--no-sandbox" \
             --browser-arg="--disable-setuid-sandbox" \
             --disable-web-security \
+            --concurrency=2 \
             --timeout=120000
+            --log=timing
+
 
       - name: Upload Video
         uses: actions/upload-artifact@v4
