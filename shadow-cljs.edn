@@ -7,5 +7,5 @@
    :modules
    {:main
     {:exports
-     {:init your-app.core/init
-      :get_root your-app.core/get-root}}}}}} ;; No :init-fn needed here
+     {:init my-video.core/init
+      :get_root my-video.core/get-root}}}}}} ;; No :init-fn needed here
