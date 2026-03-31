@@ -24,3 +24,6 @@
         :width 1920
         :height 1080}]])))
 
+(defn init []
+  (js/console.log "CLJS ESM Module Loaded"))
+
