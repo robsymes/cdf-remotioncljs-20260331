@@ -16,5 +16,6 @@
 
 (defn ^:export init []
   (js/console.log "HERE")
-  (registerRoot (r/reactify-component root)))
+  ;; (registerRoot (r/reactify-component root))
+  )
 
