@@ -15,5 +15,6 @@
     :height 1080}])
 
 (defn ^:export init []
+  (js/console.log "HERE")
   (registerRoot (r/reactify-component root)))
 
