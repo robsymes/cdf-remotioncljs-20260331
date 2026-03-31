@@ -15,8 +15,14 @@ Config.overrideWebpackConfig(enableTailwind);
 // remotion.config.ts
 // import { Config } from 'remotion';
 
-Config.Puppeteer.setChromiumHeadlessMode(true);
-Config.Puppeteer.setChromiumDisableWebSecurity(true);
+// Config.Puppeteer.setChromiumHeadlessMode(true);
+// Config.Puppeteer.setChromiumDisableWebSecurity(true);
 // Essential for some CI environments
-Config.Puppeteer.addPuppeteerArgument('--no-sandbox');
-Config.Puppeteer.addPuppeteerArgument('--disable-setuid-sandbox');
+// Config.Puppeteer.addPuppeteerArgument('--no-sandbox');
+// Config.Puppeteer.addPuppeteerArgument('--disable-setuid-sandbox');
+
+Config.setChromiumHeadlessMode(true);
+Config.setChromiumDisableWebSecurity(true);
+// Essential for some CI environments
+Config.addPuppeteerArgument('--no-sandbox');
+Config.addPuppeteerArgument('--disable-setuid-sandbox');
