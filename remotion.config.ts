@@ -11,3 +11,12 @@ import { enableTailwind } from '@remotion/tailwind-v4';
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
 Config.overrideWebpackConfig(enableTailwind);
+
+// remotion.config.ts
+// import { Config } from 'remotion';
+
+Config.Puppeteer.setChromiumHeadlessMode(true);
+Config.Puppeteer.setChromiumDisableWebSecurity(true);
+// Essential for some CI environments
+Config.Puppeteer.addPuppeteerArgument('--no-sandbox');
+Config.Puppeteer.addPuppeteerArgument('--disable-setuid-sandbox');
