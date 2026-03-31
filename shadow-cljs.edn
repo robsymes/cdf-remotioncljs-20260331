@@ -2,10 +2,10 @@
  :dependencies [[reagent "1.2.0"]]
  :builds
  {:remotion
-  {:target :esm             ;; Changed from :browser to :esm
+  {:target :esm
    :output-dir "public/js"
-   :modules
-   {:main
-    {:exports
-     {:init my-video.core/init
-      :get_root my-video.core/get-root}}}}}} ;; No :init-fn needed here
+   :modules {:main {:exports {:init my-video.core/init
+                              :get_root my-video.core/get_root}}}
+   :js-options {:resolve {"react" {:target :npm :name "react"}
+                          "react-dom" {:target :npm :name "react-dom"}}}}}}
+

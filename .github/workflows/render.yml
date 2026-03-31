@@ -21,7 +21,7 @@ jobs:
           java-version: '21'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Compile ClojureScript
         # Use 'release' to minify code and remove heavy dev tools
