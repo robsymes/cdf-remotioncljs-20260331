@@ -8,33 +8,40 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Java (for CLJS)
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '21'
 
       - name: Install Dependencies
         run: npm install
 
       - name: Compile ClojureScript
+        # Use 'release' to minify code and remove heavy dev tools
         run: npx shadow-cljs release remotion
 
-      - name: ls public js
-        run: ls public/js
+      - name: Ensure Browser
+        # Pre-installs Chromium so the render doesn't time out downloading it
+        run: npx remotion browser ensure
 
       - name: Render Video
-        run: npx remotion render src/index.ts MyVideo out.mp4 --timeout=120000 --log=verbose
+        # Using CLI flags directly avoids 'remotion.config.ts' type errors
+        run: |
+          npx remotion render src/index.ts MyVideo out/video.mp4 \
+            --browser-arg="--no-sandbox" \
+            --browser-arg="--disable-setuid-sandbox" \
+            --disable-web-security \
+            --timeout=120000
 
       - name: Upload Video
         uses: actions/upload-artifact@v4
         with:
           name: video
-          path: out.mp4
-
-
+          path: out/video.mp4

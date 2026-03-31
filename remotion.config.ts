@@ -39,9 +39,9 @@ Config.overrideWebpackConfig(enableTailwind);
 // Config.setHeadless(true); 
 
 // Add each flag individually
-Config.addPuppeteerArgument('--no-sandbox');
-Config.addPuppeteerArgument('--disable-setuid-sandbox');
-Config.setChromiumDisableWebSecurity(true);
+// Config.addPuppeteerArgument('--no-sandbox');
+// Config.addPuppeteerArgument('--disable-setuid-sandbox');
+// Config.setChromiumDisableWebSecurity(true);
 
-// Recommended for CI to avoid timeouts
-Config.setTimeoutInMilliseconds(120000);
+// // Recommended for CI to avoid timeouts
+// Config.setTimeoutInMilliseconds(120000);
