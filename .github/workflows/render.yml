@@ -25,6 +25,9 @@ jobs:
       - name: Compile ClojureScript
         run: npx shadow-cljs release remotion
 
+      - name: ls public js
+        run: ls public/js
+
       - name: Render Video
         run: npx remotion render src/index.ts MyVideo out.mp4
 
