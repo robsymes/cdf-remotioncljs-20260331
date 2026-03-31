@@ -2,11 +2,10 @@
  :dependencies [[reagent "1.2.0"]]
  :builds
  {:remotion
-  {:target :browser
+  {:target :esm             ;; Changed from :browser to :esm
    :output-dir "public/js"
-   :asset-path "/js"
-   :modules {:main {
-                    ;; :entries [my-video.core]
-
-                    :init-fn my-video.core/init}}}}}
-
+   :modules
+   {:main
+    {:exports
+     {:init your-app.core/init
+      :get_root your-app.core/get-root}}}}}} ;; No :init-fn needed here

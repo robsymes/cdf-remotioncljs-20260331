@@ -14,8 +14,8 @@
     :width 1920
     :height 1080}])
 
-(defn ^:export init []
-  (js/console.log "HERE")
-  ;; (registerRoot (r/reactify-component root))
-  )
+(defn get-root []
+  (r/reactify-component root))
 
+(defn init []
+  (js/console.log "CLJS ESM Module Loaded"))
